@@ -36,7 +36,7 @@ public class _04_RemovingStuffFromArrayLists {
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
 		ArrayList<Integer> s = new ArrayList<Integer>();
-		for (int i = 0; i < stuffIFoundInTheYard.size(); i++) {
+		for (int i =stuffIFoundInTheYard.size()-1; i > -1 ; i--) {
 			Stuff a = stuffIFoundInTheYard.get(i);
 			if(a.type=="dirt") {
 			stuffIFoundInTheYard.remove(i);

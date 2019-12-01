@@ -21,7 +21,7 @@ public class Song {
 	Vampires of the City/03 Step.mp3"); * new
 	Song("http://freedownloads.last.fm/download/569264057/Get%2BGot.mp3"); * </code>
 	 */
-	public Song(String songAddress) {
+	public Song(String songAddress) { 
 		this.songAddress = songAddress;
 	}
 

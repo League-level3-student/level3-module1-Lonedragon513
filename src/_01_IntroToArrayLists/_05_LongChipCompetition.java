@@ -17,17 +17,38 @@ public class _05_LongChipCompetition {
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
 		
+		lcc.initializeBeatles();lcc.stuff(); 
 	}
 	
+	void stuff() {
+		ArrayList<Chip> mock = new ArrayList<Chip>();
+	double longestchip=0;
+	Beatle longb = null;
+		for (int i = 0; i < theBeatles.size(); i++) {
+		mock = theBeatles.get(i).getChips();
+		
+		for (int ii = 0; ii < mock.size(); ii++) {
+	
+			if (mock.get(ii).getLength()>longestchip) {
+				longestchip= mock.get(ii).getLength();
+				longb = theBeatles.get(i);
+			}
+			
+		}
+			
+		}
+		
+		JOptionPane.showMessageDialog(null,longb.getName() );
+		
+	}
 	private void initializeBeatles() {
 		Beatle george = new Beatle("George");
 		Beatle john = new Beatle("John");
 		Beatle paul = new Beatle("Paul");
 		Beatle ringo = new Beatle("Ringo");
-		theBeatles.add(george);
-		theBeatles.add(john);
-		theBeatles.add(paul);
-		theBeatles.add(ringo);
+		theBeatles.add(ringo);theBeatles.add(george);
+		theBeatles.add(john);theBeatles.add(paul);
+		
 	}
 	
 	public ArrayList<Beatle> getTheBand(){
