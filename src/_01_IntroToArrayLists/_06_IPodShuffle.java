@@ -31,6 +31,7 @@ public class _06_IPodShuffle implements ActionListener{ArrayList<Song> song = ne
 			JFrame f = new JFrame();
 		JButton b = new JButton("Surprise Me!");
 		f.add(b);
+		f.pack();
 		b.addActionListener(this);
 		/**
 		 * 2. Congratulations on completing the sound check! * Now we want to make an
