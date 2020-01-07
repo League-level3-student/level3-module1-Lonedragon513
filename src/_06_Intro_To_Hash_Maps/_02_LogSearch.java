@@ -1,7 +1,17 @@
 package _06_Intro_To_Hash_Maps;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
-public class _02_LogSearch {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class _02_LogSearch implements ActionListener {
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
@@ -29,5 +39,70 @@ public class _02_LogSearch {
 	 * 				is not in the list. 
 	 *
 	 * */
+	JFrame f;
+	JPanel p;
+	JButton add;
+	JButton sea;
+	JButton view;
+	HashMap<Integer, String > data;
+	void setup(){
+		f = new JFrame();
+		p= new JPanel();
+		add = new JButton();
+		sea  = new JButton();
+		view = new JButton();
+		
+		f.add(p);
+		p.add(add);
+		p.add(sea);
+		p.add(view);
+		
+		
+		add.addActionListener(this);
+		sea.addActionListener(this);
+		view.addActionListener(this);
+
+		data = new HashMap<Integer,String>();
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource().equals(add)) {
+			String s = JOptionPane.showInputDialog("ID number");
+			String ss = JOptionPane.showInputDialog("name");
+			data.put(Integer.parseInt(s),ss);
+		}
+		
+		if(e.getSource().equals(sea)) {
+			String get = JOptionPane.showInputDialog("ID number");
+			System.out.println(data.get(Integer.parseInt(get))); 
+			
+			for (Integer integer : keySet) {
+			
+		}\
+			
+		Set<Integer> keySet = data.keySet();	
+		
+		
+		}
+		
+		if(e.getSource().equals(view)) {
+			for (int i = 0; i < data.size(); i++) {
+				System.out.println("ID:" + ""+ "  Name: " + data.get(null)); 
+			}
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
