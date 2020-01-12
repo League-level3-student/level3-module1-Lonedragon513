@@ -44,25 +44,35 @@ public class _02_LogSearch implements ActionListener {
 	JButton add;
 	JButton sea;
 	JButton view;
+	JButton re;
 	HashMap<Integer, String > data;
+	public static void main(String[] args) {
+		new _02_LogSearch().               setup();
+	}
 	void setup(){
 		f = new JFrame();
 		p= new JPanel();
-		add = new JButton();
-		sea  = new JButton();
-		view = new JButton();
+		add = new JButton("		add");
+		sea  = new JButton("	sea");
+		view = new JButton("	view");
+		re = new JButton("re");
 		
 		f.add(p);
 		p.add(add);
 		p.add(sea);
 		p.add(view);
+		p.add(re);
 		
 		
 		add.addActionListener(this);
 		sea.addActionListener(this);
 		view.addActionListener(this);
+		re.addActionListener(this);
 
 		data = new HashMap<Integer,String>();
+		f.setVisible(true);//();
+		f.pack();
+		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -74,22 +84,42 @@ public class _02_LogSearch implements ActionListener {
 		}
 		
 		if(e.getSource().equals(sea)) {
-			String get = JOptionPane.showInputDialog("ID number");
-			System.out.println(data.get(Integer.parseInt(get))); 
+				String get = JOptionPane.showInputDialog("ID number");int i =Integer.parseInt(get);
 			
-			for (Integer integer : keySet) {
-			
-		}\
-			
-		Set<Integer> keySet = data.keySet();	
+				/**
+			boolean ish= false;
+			for (Integer key : data.keySet()) {
+				if (i == key) {
+					System.out.println(data.get(i)); 
+					 ish=true;
+					break;
+				}
+				
+		}
+			if (ish==false)
+					System.out.println("wrong");
 		
 		
+		*/
+				if (data.keySet().contains(i)) {
+					System.out.println(data.get(i)); 
+				}
+				else
+					System.out.println("wrong");
+				
 		}
 		
 		if(e.getSource().equals(view)) {
-			for (int i = 0; i < data.size(); i++) {
-				System.out.println("ID:" + ""+ "  Name: " + data.get(null)); 
+			for (Integer integer : data.keySet()) {
+				JOptionPane.showMessageDialog(null, "ID:" + integer+ "  Name: " + data.get(integer)); 
+			
 			}
+			
+		}
+		
+		if(e.getSource().equals(re)) {
+			String get = JOptionPane.showInputDialog("ID number");int i =Integer.parseInt(get);
+			data.remove(i);
 			
 		}
 	}
