@@ -110,11 +110,13 @@ public class _02_LogSearch implements ActionListener {
 		}
 		
 		if(e.getSource().equals(view)) {
+			String s="";
 			for (Integer integer : data.keySet()) {
-				JOptionPane.showMessageDialog(null, "ID:" + integer+ "  Name: " + data.get(integer)); 
+				s=s+"ID:" + integer+ "  Name: " + data.get(integer)+"\n";
+				
 			
 			}
-			
+			JOptionPane.showMessageDialog(add,s); 
 		}
 		
 		if(e.getSource().equals(re)) {
